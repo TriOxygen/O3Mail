@@ -1,0 +1,14 @@
+## Interface: 60000
+## DefaultState: Enabled
+## Title: |cFF007FFFO3|r Mail
+## Author: Oz
+## Version: 0.1
+## Notes: O3 Mail
+## RequiredDeps: O3
+
+MailItem.lua
+MailDetailWindow.lua
+ComposeMailWindow.lua
+MailWindow.lua
+
+Mail.lua
