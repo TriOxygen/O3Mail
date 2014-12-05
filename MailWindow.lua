@@ -52,9 +52,17 @@ ns.MailWindow = O3.UI.PagerWindow:extend({
 			end,
 		})
 	end,
-	-- postCreate = function (self)
-
-	-- end,
+	replyToMail = function (self, id)
+		if (not self.composeWindow) then
+			self.composeWindow = ns.ComposeMailWindow:instance({
+				parent = self,
+			})
+		end
+		local packageIcon, stationeryIcon, sender, subject, money, codAmount, daysLeft, itemCount, wasRead, wasReturned, textCreated, canReply, isGM, itemQuantity = GetInboxHeaderInfo(id)
+		self.composeWindow:show()
+		self.composeWindow.toText.frame:SetText(sender)
+		self.composeWindow.subjectText.frame:SetText('Re : '..subject)
+	end,
 	onHide = function (self)
 		if (self.detailWindow) then
 			self.detailWindow:hide()
